@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.babyclan</groupId>
+	<artifactId>BC_Web</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>BC_Web</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<maven.compiler.target>1.13</maven.compiler.target>
+		<maven.compiler.source>1.13</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cucumber.version>6.8.1</cucumber.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-core</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-gherkin</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.0.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+		
+         <dependency>
+         	<groupId>org.apache.maven.surefire</groupId>
+         	<artifactId>surefire-testng</artifactId>
+         	<version>2.22.1</version>
+         </dependency>
+
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber6-adapter</artifactId>
+			<version>2.0.0</version>
+		</dependency>
+
+	</dependencies>
+	
+	<build>
+        
+	    <plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-surefire-plugin</artifactId>
+    			<version>2.22.1</version>
+    			<configuration>
+    				<additionalClasspathElements>
+					    <additionalClasspathElement>${basedir}/resource/libs/httpclient-4.5.9.jar</additionalClasspathElement>
+					    <additionalClasspathElement>${basedir}/resource/libs/java-client-6.1.0.jar</additionalClasspathElement>
+					    <additionalClasspathElement>${basedir}/resource/libs/manage-client-api-20.3.jar</additionalClasspathElement>
+					</additionalClasspathElements>
+
+    				<suiteXmlFiles>
+    					<suiteXmlFile>${basedir}/src/test/java/Testng.xml</suiteXmlFile>
+    				</suiteXmlFiles>
+
+    			</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
